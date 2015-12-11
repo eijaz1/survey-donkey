@@ -1,0 +1,345 @@
+<h3>Results3</h3>
+
+
+
+<script>
+
+Chart.defaults.global.tooltipTemplate = function(d){
+  return d.label;
+};
+
+
+$(document).ready(function() {
+
+
+var gender_data = <%= @gender_data.to_json %>
+  
+
+
+
+
+
+  male3data = [
+    {
+        value: gender_data["male3yes"],
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Yes: " + (((gender_data["male3yes"] / (gender_data["male3yes"] + gender_data["male3no"])).toFixed(2)) * 100) + "%"
+    },
+    {
+        value: gender_data["male3no"],
+        color: "#46BFBD",
+        highlight: "#5AD3D3",
+        label: "No: " + (((gender_data["male3no"] / (gender_data["male3yes"] + gender_data["male3no"])).toFixed(2)) * 100) + "%"
+    },
+
+];
+
+
+ctx25 = $("#male3").get(0).getContext("2d");
+ male3chart = new Chart(ctx25).Pie(male3data);
+
+ // document.getElementById("legend").innerHTML = myPieChart.generateLegend();
+
+
+
+ female3data = [
+    {
+        value: gender_data["female3yes"],
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Yes: " + (((gender_data["female3yes"] / (gender_data["female3yes"] + gender_data["female3no"])).toFixed(2)) * 100) + "%"
+    },
+    {
+        value: gender_data["female3no"],
+        color: "#46BFBD",
+        highlight: "#5AD3D3",
+        label: "No: " + (((gender_data["female3no"] / (gender_data["female3yes"] + gender_data["female3no"])).toFixed(2)) * 100) + "%"
+    }
+
+];
+
+
+ctx27 = $("#female3").get(0).getContext("2d");
+ female3chart = new Chart(ctx27).Pie(female3data);
+
+
+
+var age_data = <%= @age_data.to_json %>
+
+
+ young3data = [
+    {
+        value: age_data["young3yes"],
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Yes: " + (((age_data["young3yes"] / (age_data["young3yes"] + age_data["young3no"])).toFixed(2)) * 100) + "%"
+    },
+    {
+        value: age_data["young3no"],
+        color: "#46BFBD",
+        highlight: "#5AD3D3",
+        label: "No: " + (((age_data["young3no"] / (age_data["young3yes"] + age_data["young3no"])).toFixed(2)) * 100) + "%"
+    }
+
+];
+
+
+ctx29 = $("#young3").get(0).getContext("2d");
+young3chart = new Chart(ctx29).Pie(young3data);
+
+
+
+
+middle3data = [
+    {
+        value: age_data["middle3yes"],
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Yes: " + (((age_data["middle3yes"] / (age_data["middle3yes"] + age_data["middle3no"])).toFixed(2)) * 100) + "%"
+    },
+    {
+        value: age_data["middle3no"],
+        color: "#46BFBD",
+        highlight: "#5AD3D3",
+        label: "No: " + (((age_data["middle3no"] / (age_data["middle3yes"] + age_data["middle3no"])).toFixed(2)) * 100) + "%"
+    }
+
+];
+
+
+ctx30 = $("#middle3").get(0).getContext("2d");
+middle3chart = new Chart(ctx30).Pie(middle3data);
+
+
+
+old3data = [
+    {
+        value: age_data["old3yes"],
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Yes: " + (((age_data["old3yes"] / (age_data["old3yes"] + age_data["old3no"])).toFixed(2)) * 100) + "%"
+    },
+    {
+        value: age_data["old3no"],
+        color: "#46BFBD",
+        highlight: "#5AD3D3",
+        label: "No: " + (((age_data["old3no"] / (age_data["old3yes"] + age_data["old3no"])).toFixed(2)) * 100) + "%"
+    }
+
+];
+
+
+ctx31 = $("#old3").get(0).getContext("2d");
+old3chart = new Chart(ctx31).Pie(old3data);
+
+
+
+var location_data = <%= @location_data.to_json %>
+
+ne3data = [
+  {
+    value: location_data["ne3yes"],
+    color:"#F7464A",
+    highlight: "#FF5A5E",
+    label: "Yes: " + (((location_data["ne3yes"] / (location_data["ne3yes"] + location_data["ne3no"])).toFixed(2)) * 100) + "%"
+  },
+  {
+    value: location_data["ne3no"],
+    color: "#46BFBD",
+    highlight: "#5AD3D3",
+    label: "No: " + (((location_data["ne3no"] / (location_data["ne3yes"] + location_data["ne3no"])).toFixed(2)) * 100) + "%"
+  }
+
+];
+
+
+ctx32 = $("#ne3").get(0).getContext("2d");
+ne3chart = new Chart(ctx32).Pie(ne3data);
+
+
+
+s3data = [
+  {
+    value: location_data["s3yes"],
+    color:"#F7464A",
+    highlight: "#FF5A5E",
+    label: "Yes: " + (((location_data["s3yes"] / (location_data["s3yes"] + location_data["s3no"])).toFixed(2)) * 100) + "%"
+  },
+  {
+    value: location_data["s3no"],
+    color: "#46BFBD",
+    highlight: "#5AD3D3",
+    label: "No: " + (((location_data["s3no"] / (location_data["s3yes"] + location_data["s3no"])).toFixed(2)) * 100) + "%"
+  }
+
+];
+
+
+ctx33 = $("#s3").get(0).getContext("2d");
+s3chart = new Chart(ctx33).Pie(s3data);
+
+
+
+mw3data = [
+  {
+    value: location_data["mw3yes"],
+    color:"#F7464A",
+    highlight: "#FF5A5E",
+    label: "Yes: " + (((location_data["mw3yes"] / (location_data["mw3yes"] + location_data["mw3no"])).toFixed(2)) * 100) + "%"
+  },
+  {
+    value: location_data["mw3no"],
+    color: "#46BFBD",
+    highlight: "#5AD3D3",
+    label: "No: " + (((location_data["mw3no"] / (location_data["mw3yes"] + location_data["mw3no"])).toFixed(2)) * 100) + "%"
+  }
+
+];
+
+
+ctx34 = $("#mw3").get(0).getContext("2d");
+mw3chart = new Chart(ctx34).Pie(mw3data);
+
+
+
+w3data = [
+  {
+    value: location_data["w3yes"],
+    color:"#F7464A",
+    highlight: "#FF5A5E",
+    label: "Yes: " + (((location_data["w3yes"] / (location_data["w3yes"] + location_data["w3no"])).toFixed(2)) * 100) + "%"
+  },
+  {
+    value: location_data["w3no"],
+    color: "#46BFBD",
+    highlight: "#5AD3D3",
+    label: "No: " + (((location_data["w3no"] / (location_data["w3yes"] + location_data["w3no"])).toFixed(2)) * 100) + "%"
+  }
+
+];
+
+
+ctx35 = $("#w3").get(0).getContext("2d");
+w3chart = new Chart(ctx35).Pie(w3data);
+
+
+
+var party_affiliation_data = <%= @party_affiliation_data.to_json %>
+
+
+dem3data = [
+  {
+    value: party_affiliation_data["dem3yes"],
+    color:"#F7464A",
+    highlight: "#FF5A5E",
+    label: "Yes: " + (((party_affiliation_data["dem3yes"] / (party_affiliation_data["dem3yes"] + party_affiliation_data["dem3no"])).toFixed(2)) * 100) + "%"
+  },
+  {
+    value: party_affiliation_data["dem3no"],
+    color: "#46BFBD",
+    highlight: "#5AD3D3",
+    label: "No: " + (((party_affiliation_data["dem3no"] / (party_affiliation_data["dem3yes"] + party_affiliation_data["dem3no"])).toFixed(2)) * 100) + "%"
+  }
+
+];
+
+
+ctx36 = $("#dem3").get(0).getContext("2d");
+dem3chart = new Chart(ctx36).Pie(dem3data);
+
+
+rep3data = [
+  {
+    value: party_affiliation_data["rep3yes"],
+    color:"#F7464A",
+    highlight: "#FF5A5E",
+    label: "Yes: " + (((party_affiliation_data["rep3yes"] / (party_affiliation_data["rep3yes"] + party_affiliation_data["rep3no"])).toFixed(2)) * 100) + "%"
+  },
+  {
+    value: party_affiliation_data["rep3no"],
+    color: "#46BFBD",
+    highlight: "#5AD3D3",
+    label: "No: " + (((party_affiliation_data["rep3no"] / (party_affiliation_data["rep3yes"] + party_affiliation_data["rep3no"])).toFixed(2)) * 100) + "%"
+  }
+
+];
+
+
+ctx37 = $("#rep3").get(0).getContext("2d");
+rep3chart = new Chart(ctx37).Pie(rep3data);
+
+
+ind3data = [
+  {
+    value: party_affiliation_data["ind3yes"],
+    color:"#F7464A",
+    highlight: "#FF5A5E",
+    label: "Yes: " + (((party_affiliation_data["ind3yes"] / (party_affiliation_data["ind3yes"] + party_affiliation_data["ind3no"])).toFixed(2)) * 100) + "%"
+  },
+  {
+    value: party_affiliation_data["ind3no"],
+    color: "#46BFBD",
+    highlight: "#5AD3D3",
+    label: "No: " + (((party_affiliation_data["ind3no"] / (party_affiliation_data["ind3yes"] + party_affiliation_data["ind3no"])).toFixed(2)) * 100) + "%"
+  }
+
+];
+
+
+ctx38 = $("#ind3").get(0).getContext("2d");
+ind3chart = new Chart(ctx38).Pie(ind3data);
+
+
+});
+
+</script>
+
+
+
+<h3>Results By Gender</h3>
+<canvas id="male3" width="256" height="256"></canvas>
+<canvas id="female3" width="256" height="256"></canvas>
+<div></div>
+<h3>Results By Age</h3>
+<canvas id="young3" width="256" height="256"></canvas>
+<canvas id="middle3" width="256" height="256"></canvas>
+<canvas id="old3" width="256" height="256"></canvas>
+<div></div>
+<h3>Results By Location</h3>
+<canvas id="ne3" width="256" height="256"></canvas>
+<canvas id="s3" width="256" height="256"></canvas>
+<canvas id="mw3" width="256" height="256"></canvas>
+<canvas id="w3" width="256" height="256"></canvas>
+<div></div>
+<h3>Results By Party Affiliation</h3>
+<canvas id="dem3" width="256" height="256"></canvas>
+<canvas id="rep3" width="256" height="256"></canvas>
+<canvas id="ind3" width="256" height="256"></canvas>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

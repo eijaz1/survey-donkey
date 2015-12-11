@@ -1,0 +1,91 @@
+<body>
+
+  <nav>
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#">hello</a></li>
+      <li><a href="#">byebye</a></li>
+    </ul>
+  </nav>
+
+  <h2 class="survey-title">2016 US Election Survey</h2>
+  <div class=main-survey>
+    <form class="survey" method="post" action="/results">
+      <div class="form-group">
+        <a href="/results1"><label>Do you support increased gun control?</label></a>
+        <br>
+        <span class="yes">
+          <input type="radio" name="user[answer1]" value="yes">Yes
+        </span>
+          <input class="no" type="radio" name="user[answer1]" value="no">No
+      </div>
+
+      <div class="form-group">
+        <a href="/results2"><label>Do you think the US should accept Syrian refugees?</label></a>
+        <br>
+        <span class="yes">
+          <input type="radio" name="user[answer2]" value="yes">Yes
+        </span>
+        <input type="radio" name="user[answer2]" value="no">No
+      </div>
+
+      <div class="form-group">
+        <a href="/results3"><label>Do you support increasing the minimum wage to $15?</label></a>
+        <br>
+        <span class="yes">
+          <input type="radio" name="user[answer3]" value="yes">Yes
+        </span>
+        <input type="radio" name="user[answer3]" value="no">No
+      </div>
+
+      <div class="form-group">
+        <a href="/results4"><label>Do you believe the Federal Government should fund Planned Parenthood?</label></a>
+        <br>
+        <span class="yes">
+          <input type="radio" name="user[answer4]" value="yes">Yes
+        </span>
+        <input type="radio" name="user[answer4]" value="no">No
+      </div>
+
+      <% if @user.party_affiliation == 'democrat' %>
+        <div class="form-group">
+          <a href="/results5"><label>If the Democratic Primary was today, who would you vote for?</label></a>
+          <br>
+          <span class="yes">
+            <input type="radio" name="user[answer5]" value="Hillary Clinton">Hillary Clinton
+          </span>
+          <input type="radio" name="user[answer5]" value="Bernie Sanders">Bernie Sanders
+        </div>
+
+
+      <%elsif @user.party_affiliation == 'republican'%>
+
+        <div class="form-group">
+          <a href="/results6"><label>Do you believe Donald Trump has had a positive or negative affect on the Rebpublican Party?</label></a>
+          <br>
+          <span class="yes">
+            <input type="radio" name="user[answer6]" value="positive">Positive
+          </span>
+          <input type="radio" name="user[answer6]" value="negative">Negative
+        </div>
+
+      <%else%>
+        <div class="form-group">
+          <a href="/results7"><label>At this point in time, which party do you feel you side more with?</label></a>
+          <br>
+          <span class="yes">
+            <input type="radio" name="user[answer7]" value="Democrats">Democrats
+          </span>
+          <input type="radio" name="user[answer7]" value="Republicans">Republicans
+        </div>
+
+      <%end%>
+
+      <input type="submit" value="Submit">
+
+    </form>
+  </div>
+
+
+  <a href="/logout">logout</a>
+
+</body>
