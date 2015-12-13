@@ -1,8 +1,13 @@
-// $(document).ready(function() {
+$(document).ready(function() {
 
 //   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-
-
+  // $(".data-type").change(function() {
+  //     // var $val1 = $('#chart_type option:selected').val();
+  //     // var val2 = $('#drop option:selected').val();
+  //     $("#female1").toggle()
+  //     drawElements();
+  //   })
+})
 
 
 //   data = [
