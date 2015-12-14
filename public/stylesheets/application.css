@@ -14,16 +14,18 @@ body {
 
 .user-info {
   float: left;
-  margin-left: 10%;
+  margin-left: 5%;
   border: 3px solid red;
   padding-top: 20px;
-  padding-bottom: 50px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 20%;
   background-color: red;
   font-size: 20px;
-  height: 442.719px;
+  /*height: 442.719px;*/
+  /*width: 512.953px;*/
+  width: 40%;
 }
 
 .user-form {
@@ -31,15 +33,16 @@ body {
 }
 
 .main-select {
-  width: 100%;
-  margin-top: 13%;
-  margin-bottom: 13%;
+  width: 90%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
 }
 
 
 .question-info {
   float: right;
-  margin-right: 10%;
+  margin-right: 5%;
   text-align: center;
   border: 3px solid red;
   padding-top: 20px;
@@ -48,11 +51,12 @@ body {
   padding-right: 20px;
   border-radius: 20%;
   background-color: red;
+  width: 40%;
 }
 
 .form-group {
-  margin-top: 6.5%;
-  margin-bottom: 6.5%;
+  margin-top: 7.5%;
+  margin-bottom: 7.5%;
 }
 
 /*.survey {
@@ -87,11 +91,14 @@ body {
 .submit {
   /*clear: center;*/
   height: 75px;
-  width: 150px;
-  border-radius: 50%;
+  width: 85%;
+  border-radius: 20%;
   font-size: 30px;
   box-shadow: 20px;
-  margin: auto;
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  margin-top: 3%;
+  /*margin-top: 300px;*/
 }
 
 #female1 {

@@ -1,0 +1,126 @@
+<script>
+
+Chart.defaults.global.tooltipTemplate = function(d){
+  return d.label;
+};
+
+
+$(document).ready(function() {
+
+  var total_data = <%= @total_data.to_json %>
+    
+
+    total1data = [
+      {
+          value: total_data["yes1"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((total_data["yes1"] / (total_data["yes1"] + total_data["no1"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: total_data["no1"],
+          color: "#46BFBD",
+          highlight: "#5AD3D1",
+          label: "No: " + (((total_data["no1"] / (total_data["yes1"] + total_data["no1"])) * 100).toFixed()) + "%"
+      },
+
+  ];
+
+
+  ctx100 = $("#total1").get(0).getContext("2d");
+   total1chart = new Chart(ctx100).Pie(total1data);
+
+
+total2data = [
+      {
+          value: total_data["yes2"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((total_data["yes2"] / (total_data["yes2"] + total_data["no2"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: total_data["no2"],
+          color: "#46BFBD",
+          highlight: "#5AD3D1",
+          label: "No: " + (((total_data["no2"] / (total_data["yes2"] + total_data["no2"])) * 100).toFixed()) + "%"
+      },
+
+  ];
+
+
+  ctx200 = $("#total2").get(0).getContext("2d");
+   total2chart = new Chart(ctx200).Pie(total2data);
+
+
+   total3data = [
+      {
+          value: total_data["yes3"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((total_data["yes3"] / (total_data["yes3"] + total_data["no3"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: total_data["no3"],
+          color: "#46BFBD",
+          highlight: "#5AD3D1",
+          label: "No: " + (((total_data["no3"] / (total_data["yes3"] + total_data["no3"])) * 100).toFixed()) + "%"
+      },
+
+  ];
+
+
+  ctx300 = $("#total3").get(0).getContext("2d");
+   total3chart = new Chart(ctx300).Pie(total3data);
+
+
+   total4data = [
+      {
+          value: total_data["yes4"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((total_data["yes4"] / (total_data["yes4"] + total_data["no4"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: total_data["no4"],
+          color: "#46BFBD",
+          highlight: "#5AD3D1",
+          label: "No: " + (((total_data["no4"] / (total_data["yes4"] + total_data["no4"])) * 100).toFixed()) + "%"
+      },
+
+  ];
+
+
+  ctx400 = $("#total4").get(0).getContext("2d");
+   total4chart = new Chart(ctx400).Pie(total4data);
+
+});
+
+</script>
+
+results main
+
+<canvas id="total1" width="256" height="256"></canvas>
+<canvas id="total2" width="256" height="256"></canvas>
+<canvas id="total3" width="256" height="256"></canvas>
+<canvas id="total4" width="256" height="256"></canvas>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

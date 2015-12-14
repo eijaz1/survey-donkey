@@ -1497,3 +1497,66 @@ get "/results4" do
   }
   erb :results4
 end
+
+
+get '/resultsmain' do
+
+  # answer 1 yes
+  @yes1 = User.where("answer1 = 'yes'").count
+  # answer 1 no
+  @no1 = User.where("answer1 = 'no'").count
+    # answer 2 yes
+  @yes2 = User.where("answer2 = 'yes'").count
+  # answer 2 no
+  @no2 = User.where("answer2 = 'no'").count
+    # answer 3 yes
+  @yes3 = User.where("answer3 = 'yes'").count
+  # answer 3 no
+  @no3 = User.where("answer3 = 'no'").count
+    # answer 4 yes
+  @yes4 = User.where("answer4 = 'yes'").count
+  # answer 4 no
+  @no4 = User.where("answer4 = 'no'").count
+
+
+  @total_data = {
+    yes1: @yes1,
+    no1: @no1,
+    yes2: @yes2,
+    no2: @no2,
+    yes3: @yes3,
+    no3: @no3,
+    yes4: @yes4,
+    no4: @no4
+  }
+
+  erb :resultsmain
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
