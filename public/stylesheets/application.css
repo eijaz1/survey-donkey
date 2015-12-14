@@ -1,6 +1,12 @@
 body {
-  background-color: lightblue;
+  background-color: #806DE8;
   font-size: 18px;
+}
+
+
+
+a {
+  color: #806DE8;
 }
 
 .title {
@@ -15,13 +21,13 @@ body {
 .user-info {
   float: left;
   margin-left: 5%;
-  border: 3px solid red;
+  border: 3px solid #E8B33C;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 20%;
-  background-color: red;
+  background-color: #E8B33C;
   font-size: 20px;
   /*height: 442.719px;*/
   /*width: 512.953px;*/
@@ -44,13 +50,13 @@ body {
   float: right;
   margin-right: 5%;
   text-align: center;
-  border: 3px solid red;
+  border: 3px solid #E8B33C;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 20%;
-  background-color: red;
+  background-color: #E8B33C;
   width: 40%;
 }
 
@@ -74,6 +80,7 @@ body {
   text-align: center;
   font-size: 50px;
   margin-top: 70px;
+  color: #E8B33C;
 }
 
 .long-question {
@@ -111,3 +118,47 @@ body {
 .chart-right {
   float: right;
 }
+
+.result-link {
+  color: #E8B33C;
+  text-align: center;
+}
+
+.result-link:hover {
+  text-decoration: none;
+}
+
+.results-title {
+  text-align: center;
+}
+
+.main-results-charts {
+  margin-left: 15%;
+}
+
+.result-chart {
+  margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

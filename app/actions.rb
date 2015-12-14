@@ -6,54 +6,79 @@ get '/' do
   erb :index
 end
 
-helpers do
-  def current_user
-    if session[:id] and
-     @user = User.find(session[:id])
-     @user
-    end
-  end
-end
+# helpers do
+#   def current_user
+#     if session[:id] and
+#      @user = User.find(session[:id])
+#      @user
+#     end
+#   end
+# end
 
 
 get "/" do
-   if @user = current_user
-     redirect "/main"
-   else
+   # if @user = current_user
+   #   redirect "/main"
+   # else
      erb :index
-   end
+   # end
 end
 
 post "/" do
-   if @user = User.find_by_email(params[:email]) and @user.authenticate(params[:password])
-     session[:id] = @user.id
-     redirect "/main"
-   else
-     @error = "Wrong email/password"
+   # if @user = User.find_by_email(params[:email]) and @user.authenticate(params[:password])
+   #   session[:id] = @user.id
+   #   redirect "/main"
+   # else
+   #   @error = "Wrong email/password"
      erb :index
-   end
+   # end
 end
 
 get '/main' do
-  @user = current_user
+  @user = User.new
   erb :'main'
 end
 
-post '/results' do
-  @user = current_user
-  @user.answer1 = params[:user][:answer1]
-  @user.answer2 = params[:user][:answer2]
-  @user.answer3 = params[:user][:answer3]
-  @user.answer4 = params[:user][:answer4]
-  @user.answer5 = params[:user][:answer5]
-  @user.answer6 = params[:user][:answer6]
-  @user.answer7 = params[:user][:answer7]
-  @user.save
-  redirect "/results"
+post '/main' do
+  @user = User.new(params[:user])
+    # gender: params[:gender],
+    # age: params[:age],
+    # location: params[:location],
+    # race_ethnicity: params[:race_ethnicity],
+    # religion: params[:religion],
+    # party_affiliation: params[:party_affiliation],
+    # answer1: params[:answer1],
+    # answer2: params[:answer2],
+    # answer3: params[:answer3],
+    # answer4: params[:answer4]
+  
+    # answer5: params[:answer5],
+    # answer6: params[:answer6],
+    # answer7: params[:answer7]
+
+  # @user.gender = params[:user][:gender]
+  # @user.age = params[:user][:age]
+  # @user.location = params[:user][:location]
+  # @user.race_ethnicity = params[:user][:race_ethnicity]
+  # @user.religion = params[:user][:religion]
+  # @user.party_affiliation = params[:user][:party_affiliation]
+  # @user.answer1 = params[:user][:answer1]
+  # @user.answer2 = params[:user][:answer2]
+  # @user.answer3 = params[:user][:answer3]
+  # @user.answer4 = params[:user][:answer4]
+  # @user.answer5 = params[:user][:answer5]
+  # @user.answer6 = params[:user][:answer6]
+  # @user.answer7 = params[:user][:answer7]
+  if @user.save
+    redirect "/results"
+  else
+    erb :main
+  end
+    
 end
 
 get '/results' do
-  @user = current_user
+  @user = User.new
 
   # answer 1 male yes
   @male1yes = User.where("gender = 'male' and answer1 = 'yes'").count
