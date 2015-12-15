@@ -26,12 +26,14 @@ a {
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 15%;
+  border-radius: 5%;
   background-color: #E8B33C;
   font-size: 20px;
   /*height: 442.719px;*/
   /*width: 512.953px;*/
   width: 40%;
+/*  box-shadow: 15px 15px 5px #888888;*/
+
 }
 
 .user-form {
@@ -55,7 +57,7 @@ a {
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 15%;
+  border-radius: 5%;
   background-color: #E8B33C;
   width: 40%;
 }
@@ -99,7 +101,7 @@ a {
   /*clear: center;*/
   height: 75px;
   width: 85%;
-  border-radius: 20%;
+  border-radius: 5%;
   font-size: 30px;
   box-shadow: 20px;
   margin-left: 7.5%;
@@ -231,6 +233,37 @@ a {
   background-color: yellow;
   border-radius: 20%;
 }
+
+.back-link {
+  color: black;
+  text-align: center;
+}
+
+.back-link:hover {
+  text-decoration: none;
+}
+
+.back-link-div {
+  margin-top: 1%;
+  margin-left: 43%;
+  margin-right: 43%;
+  border: 3px solid #E8B33C;
+  border-radius: 20%;
+  background-color: #E8B33C;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

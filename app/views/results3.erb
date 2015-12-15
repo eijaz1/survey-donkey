@@ -1,4 +1,4 @@
-<h3>Results3</h3>
+
 
 
 
@@ -11,312 +11,540 @@ Chart.defaults.global.tooltipTemplate = function(d){
 
 $(document).ready(function() {
 
+function drawElements() {
+  var gender_data = <%= @gender_data.to_json %>
+    
 
-var gender_data = <%= @gender_data.to_json %>
+
+
+
+    male3data = [
+      {
+          value: gender_data["male3yes"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((gender_data["male3yes"] / (gender_data["male3yes"] + gender_data["male3no"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: gender_data["male3no"],
+          color: "#46BFBD",
+          highlight: "#5AD3D3",
+          label: "No: " + (((gender_data["male3no"] / (gender_data["male3yes"] + gender_data["male3no"])) * 100).toFixed()) + "%"
+      },
+
+  ];
+
+
+  ctx3 = $("#male3").get(0).getContext("2d");
+   male3chart = new Chart(ctx3).Pie(male3data);
+
+  ctx3 = $("#male33").get(0).getContext("2d");
+   male3chart = new Chart(ctx3).Pie(male3data);
+
+   // document.getElementById("legend").innerHTML = myPieChart.generateLegend();
+
+
+
+   female3data = [
+      {
+          value: gender_data["female3yes"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((gender_data["female3yes"] / (gender_data["female3yes"] + gender_data["female3no"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: gender_data["female3no"],
+          color: "#46BFBD",
+          highlight: "#5AD3D3",
+          label: "No: " + (((gender_data["female3no"] / (gender_data["female3yes"] + gender_data["female3no"])) * 100).toFixed()) + "%"
+      }
+
+  ];
+
+
+  ctx2 = $("#female3").get(0).getContext("2d");
+   female3chart = new Chart(ctx2).Pie(female3data);
+
+  ctx2 = $("#female33").get(0).getContext("2d");
+   female3chart = new Chart(ctx2).Pie(female3data);
+
+
+
+  var age_data = <%= @age_data.to_json %>
+
+
+   young3data = [
+      {
+          value: age_data["young3yes"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((age_data["young3yes"] / (age_data["young3yes"] + age_data["young3no"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: age_data["young3no"],
+          color: "#46BFBD",
+          highlight: "#5AD3D3",
+          label: "No: " + (((age_data["young3no"] / (age_data["young3yes"] + age_data["young3no"])) * 100).toFixed()) + "%"
+      }
+
+  ];
+
+
+  ctx3 = $("#young3").get(0).getContext("2d");
+  young3chart = new Chart(ctx3).Pie(young3data);
+
+  ctx3 = $("#young33").get(0).getContext("2d");
+  young3chart = new Chart(ctx3).Pie(young3data);
+
+
+
+
+  middle3data = [
+      {
+          value: age_data["middle3yes"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((age_data["middle3yes"] / (age_data["middle3yes"] + age_data["middle3no"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: age_data["middle3no"],
+          color: "#46BFBD",
+          highlight: "#5AD3D3",
+          label: "No: " + (((age_data["middle3no"] / (age_data["middle3yes"] + age_data["middle3no"])) * 100).toFixed()) + "%"
+      }
+
+  ];
+
+
+  ctx4 = $("#middle3").get(0).getContext("2d");
+  middle3chart = new Chart(ctx4).Pie(middle3data);
+
+  ctx4 = $("#middle33").get(0).getContext("2d");
+  middle3chart = new Chart(ctx4).Pie(middle3data);
+
+
+
+  old3data = [
+      {
+          value: age_data["old3yes"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((age_data["old3yes"] / (age_data["old3yes"] + age_data["old3no"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: age_data["old3no"],
+          color: "#46BFBD",
+          highlight: "#5AD3D3",
+          label: "No: " + (((age_data["old3no"] / (age_data["old3yes"] + age_data["old3no"])) * 100).toFixed()) + "%"
+      }
+
+  ];
+
+
+  ctx5 = $("#old3").get(0).getContext("2d");
+  old3chart = new Chart(ctx5).Pie(old3data);
+
+  ctx5 = $("#old33").get(0).getContext("2d");
+  old3chart = new Chart(ctx5).Pie(old3data);
+
+
+
+  var location_data = <%= @location_data.to_json %>
+
+  ne3data = [
+    {
+      value: location_data["ne3yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((location_data["ne3yes"] / (location_data["ne3yes"] + location_data["ne3no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: location_data["ne3no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D3",
+      label: "No: " + (((location_data["ne3no"] / (location_data["ne3yes"] + location_data["ne3no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+
+  ctx6 = $("#ne3").get(0).getContext("2d");
+  ne3chart = new Chart(ctx6).Pie(ne3data);
+
+  ctx6 = $("#ne33").get(0).getContext("2d");
+  ne3chart = new Chart(ctx6).Pie(ne3data);
+
+
+
+  s3data = [
+    {
+      value: location_data["s3yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((location_data["s3yes"] / (location_data["s3yes"] + location_data["s3no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: location_data["s3no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D3",
+      label: "No: " + (((location_data["s3no"] / (location_data["s3yes"] + location_data["s3no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+
+  ctx7 = $("#s3").get(0).getContext("2d");
+  s3chart = new Chart(ctx7).Pie(s3data);
+
+  ctx7 = $("#s33").get(0).getContext("2d");
+  s3chart = new Chart(ctx7).Pie(s3data);
+
+
+
+  mw3data = [
+    {
+      value: location_data["mw3yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((location_data["mw3yes"] / (location_data["mw3yes"] + location_data["mw3no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: location_data["mw3no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D3",
+      label: "No: " + (((location_data["mw3no"] / (location_data["mw3yes"] + location_data["mw3no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+
+  ctx8 = $("#mw3").get(0).getContext("2d");
+  mw3chart = new Chart(ctx8).Pie(mw3data);
+
+  ctx8 = $("#mw33").get(0).getContext("2d");
+  mw3chart = new Chart(ctx8).Pie(mw3data);
+
+
+
+  w3data = [
+    {
+      value: location_data["w3yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((location_data["w3yes"] / (location_data["w3yes"] + location_data["w3no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: location_data["w3no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D3",
+      label: "No: " + (((location_data["w3no"] / (location_data["w3yes"] + location_data["w3no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+
+  ctx9 = $("#w3").get(0).getContext("2d");
+  w3chart = new Chart(ctx9).Pie(w3data);
+  ctx9 = $("#w33").get(0).getContext("2d");
+  w3chart = new Chart(ctx9).Pie(w3data);
+
+
+
+  var party_affiliation_data = <%= @party_affiliation_data.to_json %>
+
+
+  dem3data = [
+    {
+      value: party_affiliation_data["dem3yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((party_affiliation_data["dem3yes"] / (party_affiliation_data["dem3yes"] + party_affiliation_data["dem3no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: party_affiliation_data["dem3no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D3",
+      label: "No: " + (((party_affiliation_data["dem3no"] / (party_affiliation_data["dem3yes"] + party_affiliation_data["dem3no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+
+  ctx30 = $("#dem3").get(0).getContext("2d");
+  dem3chart = new Chart(ctx30).Pie(dem3data);
+
+  ctx30 = $("#dem33").get(0).getContext("2d");
+  dem3chart = new Chart(ctx30).Pie(dem3data);
+
+
+  rep3data = [
+    {
+      value: party_affiliation_data["rep3yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((party_affiliation_data["rep3yes"] / (party_affiliation_data["rep3yes"] + party_affiliation_data["rep3no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: party_affiliation_data["rep3no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D3",
+      label: "No: " + (((party_affiliation_data["rep3no"] / (party_affiliation_data["rep3yes"] + party_affiliation_data["rep3no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+
+  ctx33 = $("#rep3").get(0).getContext("2d");
+  rep3chart = new Chart(ctx33).Pie(rep3data);
+
+  ctx33 = $("#rep33").get(0).getContext("2d");
+  rep3chart = new Chart(ctx33).Pie(rep3data);
+
+
+  ind3data = [
+    {
+      value: party_affiliation_data["ind3yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((party_affiliation_data["ind3yes"] / (party_affiliation_data["ind3yes"] + party_affiliation_data["ind3no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: party_affiliation_data["ind3no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D3",
+      label: "No: " + (((party_affiliation_data["ind3no"] / (party_affiliation_data["ind3yes"] + party_affiliation_data["ind3no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+  ctx32 = $("#ind3").get(0).getContext("2d");
+  ind3chart = new Chart(ctx32).Pie(ind3data);
+
+  ctx32 = $("#ind33").get(0).getContext("2d");
+  ind3chart = new Chart(ctx32).Pie(ind3data);
+
+};
   
-
-
-
-
-
-  male3data = [
-    {
-        value: gender_data["male3yes"],
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Yes: " + (((gender_data["male3yes"] / (gender_data["male3yes"] + gender_data["male3no"])).toFixed(2)) * 100) + "%"
-    },
-    {
-        value: gender_data["male3no"],
-        color: "#46BFBD",
-        highlight: "#5AD3D3",
-        label: "No: " + (((gender_data["male3no"] / (gender_data["male3yes"] + gender_data["male3no"])).toFixed(2)) * 100) + "%"
-    },
-
-];
-
-
-ctx25 = $("#male3").get(0).getContext("2d");
- male3chart = new Chart(ctx25).Pie(male3data);
-
- // document.getElementById("legend").innerHTML = myPieChart.generateLegend();
-
-
-
- female3data = [
-    {
-        value: gender_data["female3yes"],
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Yes: " + (((gender_data["female3yes"] / (gender_data["female3yes"] + gender_data["female3no"])).toFixed(2)) * 100) + "%"
-    },
-    {
-        value: gender_data["female3no"],
-        color: "#46BFBD",
-        highlight: "#5AD3D3",
-        label: "No: " + (((gender_data["female3no"] / (gender_data["female3yes"] + gender_data["female3no"])).toFixed(2)) * 100) + "%"
-    }
-
-];
-
-
-ctx27 = $("#female3").get(0).getContext("2d");
- female3chart = new Chart(ctx27).Pie(female3data);
-
-
-
-var age_data = <%= @age_data.to_json %>
-
-
- young3data = [
-    {
-        value: age_data["young3yes"],
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Yes: " + (((age_data["young3yes"] / (age_data["young3yes"] + age_data["young3no"])).toFixed(2)) * 100) + "%"
-    },
-    {
-        value: age_data["young3no"],
-        color: "#46BFBD",
-        highlight: "#5AD3D3",
-        label: "No: " + (((age_data["young3no"] / (age_data["young3yes"] + age_data["young3no"])).toFixed(2)) * 100) + "%"
-    }
-
-];
-
-
-ctx29 = $("#young3").get(0).getContext("2d");
-young3chart = new Chart(ctx29).Pie(young3data);
-
-
-
-
-middle3data = [
-    {
-        value: age_data["middle3yes"],
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Yes: " + (((age_data["middle3yes"] / (age_data["middle3yes"] + age_data["middle3no"])).toFixed(2)) * 100) + "%"
-    },
-    {
-        value: age_data["middle3no"],
-        color: "#46BFBD",
-        highlight: "#5AD3D3",
-        label: "No: " + (((age_data["middle3no"] / (age_data["middle3yes"] + age_data["middle3no"])).toFixed(2)) * 100) + "%"
-    }
-
-];
-
-
-ctx30 = $("#middle3").get(0).getContext("2d");
-middle3chart = new Chart(ctx30).Pie(middle3data);
-
-
-
-old3data = [
-    {
-        value: age_data["old3yes"],
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Yes: " + (((age_data["old3yes"] / (age_data["old3yes"] + age_data["old3no"])).toFixed(2)) * 100) + "%"
-    },
-    {
-        value: age_data["old3no"],
-        color: "#46BFBD",
-        highlight: "#5AD3D3",
-        label: "No: " + (((age_data["old3no"] / (age_data["old3yes"] + age_data["old3no"])).toFixed(2)) * 100) + "%"
-    }
-
-];
-
-
-ctx31 = $("#old3").get(0).getContext("2d");
-old3chart = new Chart(ctx31).Pie(old3data);
-
-
-
-var location_data = <%= @location_data.to_json %>
-
-ne3data = [
-  {
-    value: location_data["ne3yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((location_data["ne3yes"] / (location_data["ne3yes"] + location_data["ne3no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: location_data["ne3no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D3",
-    label: "No: " + (((location_data["ne3no"] / (location_data["ne3yes"] + location_data["ne3no"])).toFixed(2)) * 100) + "%"
+  drawElements()
+  function hide_chart(){
+    $("#female3").hide()
+    $("#young3").hide()
+    $("#middle3").hide()
+    $("#old3").hide()
+    $("#ne3").hide()
+    $("#s3").hide()
+    $("#mw3").hide()
+    $("#w3").hide()
+    $("#dem3").hide()
+    $("#rep3").hide()
+    $("#ind3").hide()
   }
+  setTimeout(hide_chart, 1);
+  // $("#female1").hide()
+  // $("#young1").hide()
+  // $("#middle1").hide()
+  // $("#old1").hide()
+  // $("#ne1").hide()
+  // $("#s1").hide()
+  // $("#mw1").hide()
+  // $("#w1").hide()
+  // $("#dem1").hide()
+  // $("#rep1").hide()
+  // $("#ind1").hide()
 
-];
-
-
-ctx32 = $("#ne3").get(0).getContext("2d");
-ne3chart = new Chart(ctx32).Pie(ne3data);
-
-
-
-s3data = [
-  {
-    value: location_data["s3yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((location_data["s3yes"] / (location_data["s3yes"] + location_data["s3no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: location_data["s3no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D3",
-    label: "No: " + (((location_data["s3no"] / (location_data["s3yes"] + location_data["s3no"])).toFixed(2)) * 100) + "%"
+  // drawElements11()
+    function hide_chart11(){
+    $("#male33").hide()
+    $("#young33").hide()
+    $("#middle33").hide()
+    $("#old33").hide()
+    $("#ne33").hide()
+    $("#s33").hide()
+    $("#mw33").hide()
+    $("#w33").hide()
+    $("#dem33").hide()
+    $("#rep33").hide()
+    $("#ind33").hide()
   }
-
-];
-
-
-ctx33 = $("#s3").get(0).getContext("2d");
-s3chart = new Chart(ctx33).Pie(s3data);
+  setTimeout(hide_chart11, 1);
 
 
+  // function change() {
+  //   var val1 = $(".data-type option:selected").val()
+  //   $('#'+val1).show(100, drawElements)
+  //   $("#male1").hide()
+  // }
 
-mw3data = [
-  {
-    value: location_data["mw3yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((location_data["mw3yes"] / (location_data["mw3yes"] + location_data["mw3no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: location_data["mw3no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D3",
-    label: "No: " + (((location_data["mw3no"] / (location_data["mw3yes"] + location_data["mw3no"])).toFixed(2)) * 100) + "%"
-  }
+  $(".data-type").change(function() {
 
-];
-
-
-ctx34 = $("#mw3").get(0).getContext("2d");
-mw3chart = new Chart(ctx34).Pie(mw3data);
+    var val1 = $(".data-type option:selected").val();
+    // $('#'+val1).hide()
+    $('#'+val1).show()
+    $('#'+val1).siblings('canvas').hide()
+    // $('canvas').show(1, drawElements);
+    // $('canvas').hide();
+    // $('#'+val1).show(100);
+   // change()
+  })
 
 
+  $(".data-type11").change(function() {
 
-w3data = [
-  {
-    value: location_data["w3yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((location_data["w3yes"] / (location_data["w3yes"] + location_data["w3no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: location_data["w3no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D3",
-    label: "No: " + (((location_data["w3no"] / (location_data["w3yes"] + location_data["w3no"])).toFixed(2)) * 100) + "%"
-  }
-
-];
-
-
-ctx35 = $("#w3").get(0).getContext("2d");
-w3chart = new Chart(ctx35).Pie(w3data);
-
-
-
-var party_affiliation_data = <%= @party_affiliation_data.to_json %>
-
-
-dem3data = [
-  {
-    value: party_affiliation_data["dem3yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((party_affiliation_data["dem3yes"] / (party_affiliation_data["dem3yes"] + party_affiliation_data["dem3no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: party_affiliation_data["dem3no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D3",
-    label: "No: " + (((party_affiliation_data["dem3no"] / (party_affiliation_data["dem3yes"] + party_affiliation_data["dem3no"])).toFixed(2)) * 100) + "%"
-  }
-
-];
-
-
-ctx36 = $("#dem3").get(0).getContext("2d");
-dem3chart = new Chart(ctx36).Pie(dem3data);
-
-
-rep3data = [
-  {
-    value: party_affiliation_data["rep3yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((party_affiliation_data["rep3yes"] / (party_affiliation_data["rep3yes"] + party_affiliation_data["rep3no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: party_affiliation_data["rep3no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D3",
-    label: "No: " + (((party_affiliation_data["rep3no"] / (party_affiliation_data["rep3yes"] + party_affiliation_data["rep3no"])).toFixed(2)) * 100) + "%"
-  }
-
-];
-
-
-ctx37 = $("#rep3").get(0).getContext("2d");
-rep3chart = new Chart(ctx37).Pie(rep3data);
-
-
-ind3data = [
-  {
-    value: party_affiliation_data["ind3yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((party_affiliation_data["ind3yes"] / (party_affiliation_data["ind3yes"] + party_affiliation_data["ind3no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: party_affiliation_data["ind3no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D3",
-    label: "No: " + (((party_affiliation_data["ind3no"] / (party_affiliation_data["ind3yes"] + party_affiliation_data["ind3no"])).toFixed(2)) * 100) + "%"
-  }
-
-];
-
-
-ctx38 = $("#ind3").get(0).getContext("2d");
-ind3chart = new Chart(ctx38).Pie(ind3data);
-
+    var val11 = $(".data-type11 option:selected").val();
+    // $('#'+val1).hide()
+    $('#'+val11).show()
+    $('#'+val11).siblings('canvas').hide()
+    // $('canvas').show(1, drawElements);
+    // $('canvas').hide();
+    // $('#'+val1).show(100);
+   // change()
+  })
 
 });
+
+
 
 </script>
 
 
 
-<h3>Results By Gender</h3>
-<canvas id="male3" width="256" height="256"></canvas>
-<canvas id="female3" width="256" height="256"></canvas>
-<div></div>
-<h3>Results By Age</h3>
-<canvas id="young3" width="256" height="256"></canvas>
-<canvas id="middle3" width="256" height="256"></canvas>
-<canvas id="old3" width="256" height="256"></canvas>
-<div></div>
-<h3>Results By Location</h3>
-<canvas id="ne3" width="256" height="256"></canvas>
-<canvas id="s3" width="256" height="256"></canvas>
-<canvas id="mw3" width="256" height="256"></canvas>
-<canvas id="w3" width="256" height="256"></canvas>
-<div></div>
-<h3>Results By Party Affiliation</h3>
-<canvas id="dem3" width="256" height="256"></canvas>
-<canvas id="rep3" width="256" height="256"></canvas>
-<canvas id="ind3" width="256" height="256"></canvas>
+<!-- <h3>Results By Gender</h3> -->
 
+<div class="results-title row">
+  <div class="col-md-12">
+    <h1>Do you support increasing the minimum wage to $15?</h1>
+
+    <div class="legend1">
+      <div class="row legend-info1">
+        <div class="col-md-3">
+          <p class="yes-legend1">YES</p>
+        </div>
+        <div class="col-md-3">
+          <div class="yes-box1"></div>
+        </div>
+        <div class="col-md-3">
+          <p class="no-legend1">NO</p>
+        </div>
+        <div class="col-md-3">
+          <div class="no-box1"></div>
+        </div>
+      </div>
+    </div>
+     <div class="back-link-div">
+      <a class="back-link" href="/resultsmain">Back to all results</a>
+    </div>
+  </div>
+</div>
+
+  <!-- <form> -->
+  <div class="row">
+    <div class="col-md-6 chart1">
+      <div class="chart_left">
+        <select class="data-type" name="data_type">
+          <option disabled>User Type</option>
+          <option disabled>Gender</option>
+          <option selected value="male3">Male</option>
+          <option value="female3">Female</option>
+          <option disabled>Age</option>
+          <option value="young3">38-35</option>
+          <option value="middle3">36-54</option>
+          <option value="old3">55+</option>
+          <option disabled>Location</option>
+          <option value="ne3">Northeast</option>
+          <option value="s3">South</option>
+          <option value="mw3">Midwest</option>
+          <option value="w3">West</option>
+          <option disabled>Party Affiliation</option>
+          <option value="dem3">Democrat</option>
+          <option value="rep3">Republican</option>
+          <option value="ind3">Independent</option>
+        </select>
+        <!-- <div class="submit">
+        <input type="submit" value="Submit">
+      </div> -->
+      </div>
+    <!-- </form> -->
+    <div class="pie1">
+      <canvas id="male3" width="500" height="500"></canvas>
+      <canvas id="female3" width="500" height="500"></canvas>
+      <!-- <div></div>
+      <h3>Results By Age</h3> -->
+      <canvas id="young3" width="500" height="500"></canvas>
+      <canvas id="middle3" width="500" height="500"></canvas>
+      <canvas id="old3" width="500" height="500"></canvas>
+      <!-- <div></div>
+      <h3>Results By Location</h3> -->
+      <canvas id="ne3" width="500" height="500"></canvas>
+      <canvas id="s3" width="500" height="500"></canvas>
+      <canvas id="mw3" width="500" height="500"></canvas>
+      <canvas id="w3" width="500" height="500"></canvas>
+      <!-- <div></div>
+      <h3>Results By Party Affiliation</h3> -->
+      <canvas id="dem3" width="500" height="500"></canvas>
+      <canvas id="rep3" width="500" height="500"></canvas>
+      <canvas id="ind3" width="500" height="500"></canvas>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="col-md-6 chart2">
+    <div class="chart_right">
+      <select class="data-type11" name="data_type11">
+        <option disabled>Gender</option>
+        <option value="male33">Male</option>
+        <option selected value="female33">Female</option>
+        <option disabled>Age</option>
+        <option value="young33">18-35</option>
+        <option value="middle33">36-54</option>
+        <option value="old33">55+</option>
+        <option disabled>Location</option>
+        <option value="ne33">Northeast</option>
+        <option value="s33">South</option>
+        <option value="mw33">Midwest</option>
+        <option value="w33">West</option>
+        <option disabled>Party Affiliation</option>
+        <option value="dem33">Democrat</option>
+        <option value="rep33">Republican</option>
+        <option value="ind33">Independent</option>
+      </select>
+      <!-- <div class="submit">
+      <input type="submit" value="Submit">
+    </div> -->
+    </div>
+  <!-- </form> -->
+
+    <div class="pie2">
+      <canvas id="male33" width="500" height="500"></canvas>
+      <canvas id="female33" width="500" height="500"></canvas>
+      <!-- <div></div>
+      <h3>Results By Age</h3> -->
+      <canvas id="young33" width="500" height="500"></canvas>
+      <canvas id="middle33" width="500" height="500"></canvas>
+      <canvas id="old33" width="500" height="500"></canvas>
+      <!-- <div></div>
+      <h3>Results By Location</h3> -->
+      <canvas id="ne33" width="500" height="500"></canvas>
+      <canvas id="s33" width="500" height="500"></canvas>
+      <canvas id="mw33" width="500" height="500"></canvas>
+      <canvas id="w33" width="500" height="500"></canvas>
+      <!-- <div></div>
+      <h3>Results By Party Affiliation</h3> -->
+      <canvas id="dem33" width="500" height="500"></canvas>
+      <canvas id="rep33" width="500" height="500"></canvas>
+      <canvas id="ind33" width="500" height="500"></canvas>
+    </div>
+  </div>
+</div>
 
 
 

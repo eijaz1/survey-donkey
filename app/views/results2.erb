@@ -1,4 +1,4 @@
-<h2>results2</h2>
+
 
 
 
@@ -11,312 +11,540 @@ Chart.defaults.global.tooltipTemplate = function(d){
 
 $(document).ready(function() {
 
+function drawElements() {
+  var gender_data = <%= @gender_data.to_json %>
+    
 
-var gender_data = <%= @gender_data.to_json %>
+
+
+
+    male2data = [
+      {
+          value: gender_data["male2yes"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((gender_data["male2yes"] / (gender_data["male2yes"] + gender_data["male2no"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: gender_data["male2no"],
+          color: "#46BFBD",
+          highlight: "#5AD3D2",
+          label: "No: " + (((gender_data["male2no"] / (gender_data["male2yes"] + gender_data["male2no"])) * 100).toFixed()) + "%"
+      },
+
+  ];
+
+
+  ctx2 = $("#male2").get(0).getContext("2d");
+   male2chart = new Chart(ctx2).Pie(male2data);
+
+  ctx2 = $("#male22").get(0).getContext("2d");
+   male2chart = new Chart(ctx2).Pie(male2data);
+
+   // document.getElementById("legend").innerHTML = myPieChart.generateLegend();
+
+
+
+   female2data = [
+      {
+          value: gender_data["female2yes"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((gender_data["female2yes"] / (gender_data["female2yes"] + gender_data["female2no"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: gender_data["female2no"],
+          color: "#46BFBD",
+          highlight: "#5AD3D2",
+          label: "No: " + (((gender_data["female2no"] / (gender_data["female2yes"] + gender_data["female2no"])) * 100).toFixed()) + "%"
+      }
+
+  ];
+
+
+  ctx2 = $("#female2").get(0).getContext("2d");
+   female2chart = new Chart(ctx2).Pie(female2data);
+
+  ctx2 = $("#female22").get(0).getContext("2d");
+   female2chart = new Chart(ctx2).Pie(female2data);
+
+
+
+  var age_data = <%= @age_data.to_json %>
+
+
+   young2data = [
+      {
+          value: age_data["young2yes"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((age_data["young2yes"] / (age_data["young2yes"] + age_data["young2no"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: age_data["young2no"],
+          color: "#46BFBD",
+          highlight: "#5AD3D2",
+          label: "No: " + (((age_data["young2no"] / (age_data["young2yes"] + age_data["young2no"])) * 100).toFixed()) + "%"
+      }
+
+  ];
+
+
+  ctx3 = $("#young2").get(0).getContext("2d");
+  young2chart = new Chart(ctx3).Pie(young2data);
+
+  ctx3 = $("#young22").get(0).getContext("2d");
+  young2chart = new Chart(ctx3).Pie(young2data);
+
+
+
+
+  middle2data = [
+      {
+          value: age_data["middle2yes"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((age_data["middle2yes"] / (age_data["middle2yes"] + age_data["middle2no"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: age_data["middle2no"],
+          color: "#46BFBD",
+          highlight: "#5AD3D2",
+          label: "No: " + (((age_data["middle2no"] / (age_data["middle2yes"] + age_data["middle2no"])) * 100).toFixed()) + "%"
+      }
+
+  ];
+
+
+  ctx4 = $("#middle2").get(0).getContext("2d");
+  middle2chart = new Chart(ctx4).Pie(middle2data);
+
+  ctx4 = $("#middle22").get(0).getContext("2d");
+  middle2chart = new Chart(ctx4).Pie(middle2data);
+
+
+
+  old2data = [
+      {
+          value: age_data["old2yes"],
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Yes: " + (((age_data["old2yes"] / (age_data["old2yes"] + age_data["old2no"])) * 100).toFixed()) + "%"
+      },
+      {
+          value: age_data["old2no"],
+          color: "#46BFBD",
+          highlight: "#5AD3D2",
+          label: "No: " + (((age_data["old2no"] / (age_data["old2yes"] + age_data["old2no"])) * 100).toFixed()) + "%"
+      }
+
+  ];
+
+
+  ctx5 = $("#old2").get(0).getContext("2d");
+  old2chart = new Chart(ctx5).Pie(old2data);
+
+  ctx5 = $("#old22").get(0).getContext("2d");
+  old2chart = new Chart(ctx5).Pie(old2data);
+
+
+
+  var location_data = <%= @location_data.to_json %>
+
+  ne2data = [
+    {
+      value: location_data["ne2yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((location_data["ne2yes"] / (location_data["ne2yes"] + location_data["ne2no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: location_data["ne2no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D2",
+      label: "No: " + (((location_data["ne2no"] / (location_data["ne2yes"] + location_data["ne2no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+
+  ctx6 = $("#ne2").get(0).getContext("2d");
+  ne2chart = new Chart(ctx6).Pie(ne2data);
+
+  ctx6 = $("#ne22").get(0).getContext("2d");
+  ne2chart = new Chart(ctx6).Pie(ne2data);
+
+
+
+  s2data = [
+    {
+      value: location_data["s2yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((location_data["s2yes"] / (location_data["s2yes"] + location_data["s2no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: location_data["s2no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D2",
+      label: "No: " + (((location_data["s2no"] / (location_data["s2yes"] + location_data["s2no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+
+  ctx7 = $("#s2").get(0).getContext("2d");
+  s2chart = new Chart(ctx7).Pie(s2data);
+
+  ctx7 = $("#s22").get(0).getContext("2d");
+  s2chart = new Chart(ctx7).Pie(s2data);
+
+
+
+  mw2data = [
+    {
+      value: location_data["mw2yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((location_data["mw2yes"] / (location_data["mw2yes"] + location_data["mw2no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: location_data["mw2no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D2",
+      label: "No: " + (((location_data["mw2no"] / (location_data["mw2yes"] + location_data["mw2no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+
+  ctx8 = $("#mw2").get(0).getContext("2d");
+  mw2chart = new Chart(ctx8).Pie(mw2data);
+
+  ctx8 = $("#mw22").get(0).getContext("2d");
+  mw2chart = new Chart(ctx8).Pie(mw2data);
+
+
+
+  w2data = [
+    {
+      value: location_data["w2yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((location_data["w2yes"] / (location_data["w2yes"] + location_data["w2no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: location_data["w2no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D2",
+      label: "No: " + (((location_data["w2no"] / (location_data["w2yes"] + location_data["w2no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+
+  ctx9 = $("#w2").get(0).getContext("2d");
+  w2chart = new Chart(ctx9).Pie(w2data);
+  ctx9 = $("#w22").get(0).getContext("2d");
+  w2chart = new Chart(ctx9).Pie(w2data);
+
+
+
+  var party_affiliation_data = <%= @party_affiliation_data.to_json %>
+
+
+  dem2data = [
+    {
+      value: party_affiliation_data["dem2yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((party_affiliation_data["dem2yes"] / (party_affiliation_data["dem2yes"] + party_affiliation_data["dem2no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: party_affiliation_data["dem2no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D2",
+      label: "No: " + (((party_affiliation_data["dem2no"] / (party_affiliation_data["dem2yes"] + party_affiliation_data["dem2no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+
+  ctx20 = $("#dem2").get(0).getContext("2d");
+  dem2chart = new Chart(ctx20).Pie(dem2data);
+
+  ctx20 = $("#dem22").get(0).getContext("2d");
+  dem2chart = new Chart(ctx20).Pie(dem2data);
+
+
+  rep2data = [
+    {
+      value: party_affiliation_data["rep2yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((party_affiliation_data["rep2yes"] / (party_affiliation_data["rep2yes"] + party_affiliation_data["rep2no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: party_affiliation_data["rep2no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D2",
+      label: "No: " + (((party_affiliation_data["rep2no"] / (party_affiliation_data["rep2yes"] + party_affiliation_data["rep2no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+
+  ctx22 = $("#rep2").get(0).getContext("2d");
+  rep2chart = new Chart(ctx22).Pie(rep2data);
+
+  ctx22 = $("#rep22").get(0).getContext("2d");
+  rep2chart = new Chart(ctx22).Pie(rep2data);
+
+
+  ind2data = [
+    {
+      value: party_affiliation_data["ind2yes"],
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Yes: " + (((party_affiliation_data["ind2yes"] / (party_affiliation_data["ind2yes"] + party_affiliation_data["ind2no"])) * 100).toFixed()) + "%"
+    },
+    {
+      value: party_affiliation_data["ind2no"],
+      color: "#46BFBD",
+      highlight: "#5AD3D2",
+      label: "No: " + (((party_affiliation_data["ind2no"] / (party_affiliation_data["ind2yes"] + party_affiliation_data["ind2no"])) * 100).toFixed()) + "%"
+    }
+
+  ];
+
+  ctx22 = $("#ind2").get(0).getContext("2d");
+  ind2chart = new Chart(ctx22).Pie(ind2data);
+
+  ctx22 = $("#ind22").get(0).getContext("2d");
+  ind2chart = new Chart(ctx22).Pie(ind2data);
+
+};
   
-
-
-
-
-
-  male2data = [
-    {
-        value: gender_data["male2yes"],
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Yes: " + (((gender_data["male2yes"] / (gender_data["male2yes"] + gender_data["male2no"])).toFixed(2)) * 100) + "%"
-    },
-    {
-        value: gender_data["male2no"],
-        color: "#46BFBD",
-        highlight: "#5AD3D2",
-        label: "No: " + (((gender_data["male2no"] / (gender_data["male2yes"] + gender_data["male2no"])).toFixed(2)) * 100) + "%"
-    },
-
-];
-
-
-ctx24 = $("#male2").get(0).getContext("2d");
- male2chart = new Chart(ctx24).Pie(male2data);
-
- // document.getElementById("legend").innerHTML = myPieChart.generateLegend();
-
-
-
- female2data = [
-    {
-        value: gender_data["female2yes"],
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Yes: " + (((gender_data["female2yes"] / (gender_data["female2yes"] + gender_data["female2no"])).toFixed(2)) * 100) + "%"
-    },
-    {
-        value: gender_data["female2no"],
-        color: "#46BFBD",
-        highlight: "#5AD3D2",
-        label: "No: " + (((gender_data["female2no"] / (gender_data["female2yes"] + gender_data["female2no"])).toFixed(2)) * 100) + "%"
-    }
-
-];
-
-
-ctx13 = $("#female2").get(0).getContext("2d");
- female2chart = new Chart(ctx13).Pie(female2data);
-
-
-
-var age_data = <%= @age_data.to_json %>
-
-
- young2data = [
-    {
-        value: age_data["young2yes"],
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Yes: " + (((age_data["young2yes"] / (age_data["young2yes"] + age_data["young2no"])).toFixed(2)) * 100) + "%"
-    },
-    {
-        value: age_data["young2no"],
-        color: "#46BFBD",
-        highlight: "#5AD3D2",
-        label: "No: " + (((age_data["young2no"] / (age_data["young2yes"] + age_data["young2no"])).toFixed(2)) * 100) + "%"
-    }
-
-];
-
-
-ctx14 = $("#young2").get(0).getContext("2d");
-young2chart = new Chart(ctx14).Pie(young2data);
-
-
-
-
-middle2data = [
-    {
-        value: age_data["middle2yes"],
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Yes: " + (((age_data["middle2yes"] / (age_data["middle2yes"] + age_data["middle2no"])).toFixed(2)) * 100) + "%"
-    },
-    {
-        value: age_data["middle2no"],
-        color: "#46BFBD",
-        highlight: "#5AD3D2",
-        label: "No: " + (((age_data["middle2no"] / (age_data["middle2yes"] + age_data["middle2no"])).toFixed(2)) * 100) + "%"
-    }
-
-];
-
-
-ctx15 = $("#middle2").get(0).getContext("2d");
-middle2chart = new Chart(ctx15).Pie(middle2data);
-
-
-
-old2data = [
-    {
-        value: age_data["old2yes"],
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Yes: " + (((age_data["old2yes"] / (age_data["old2yes"] + age_data["old2no"])).toFixed(2)) * 100) + "%"
-    },
-    {
-        value: age_data["old2no"],
-        color: "#46BFBD",
-        highlight: "#5AD3D2",
-        label: "No: " + (((age_data["old2no"] / (age_data["old2yes"] + age_data["old2no"])).toFixed(2)) * 100) + "%"
-    }
-
-];
-
-
-ctx16 = $("#old2").get(0).getContext("2d");
-old2chart = new Chart(ctx16).Pie(old2data);
-
-
-
-var location_data = <%= @location_data.to_json %>
-
-ne2data = [
-  {
-    value: location_data["ne2yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((location_data["ne2yes"] / (location_data["ne2yes"] + location_data["ne2no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: location_data["ne2no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D2",
-    label: "No: " + (((location_data["ne2no"] / (location_data["ne2yes"] + location_data["ne2no"])).toFixed(2)) * 100) + "%"
+  drawElements()
+  function hide_chart(){
+    $("#female2").hide()
+    $("#young2").hide()
+    $("#middle2").hide()
+    $("#old2").hide()
+    $("#ne2").hide()
+    $("#s2").hide()
+    $("#mw2").hide()
+    $("#w2").hide()
+    $("#dem2").hide()
+    $("#rep2").hide()
+    $("#ind2").hide()
   }
+  setTimeout(hide_chart, 1);
+  // $("#female1").hide()
+  // $("#young1").hide()
+  // $("#middle1").hide()
+  // $("#old1").hide()
+  // $("#ne1").hide()
+  // $("#s1").hide()
+  // $("#mw1").hide()
+  // $("#w1").hide()
+  // $("#dem1").hide()
+  // $("#rep1").hide()
+  // $("#ind1").hide()
 
-];
-
-
-ctx17 = $("#ne2").get(0).getContext("2d");
-ne2chart = new Chart(ctx17).Pie(ne2data);
-
-
-
-s2data = [
-  {
-    value: location_data["s2yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((location_data["s2yes"] / (location_data["s2yes"] + location_data["s2no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: location_data["s2no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D2",
-    label: "No: " + (((location_data["s2no"] / (location_data["s2yes"] + location_data["s2no"])).toFixed(2)) * 100) + "%"
+  // drawElements11()
+    function hide_chart11(){
+    $("#male22").hide()
+    $("#young22").hide()
+    $("#middle22").hide()
+    $("#old22").hide()
+    $("#ne22").hide()
+    $("#s22").hide()
+    $("#mw22").hide()
+    $("#w22").hide()
+    $("#dem22").hide()
+    $("#rep22").hide()
+    $("#ind22").hide()
   }
-
-];
-
-
-ctx18 = $("#s2").get(0).getContext("2d");
-s2chart = new Chart(ctx18).Pie(s2data);
+  setTimeout(hide_chart11, 1);
 
 
+  // function change() {
+  //   var val1 = $(".data-type option:selected").val()
+  //   $('#'+val1).show(100, drawElements)
+  //   $("#male1").hide()
+  // }
 
-mw2data = [
-  {
-    value: location_data["mw2yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((location_data["mw2yes"] / (location_data["mw2yes"] + location_data["mw2no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: location_data["mw2no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D2",
-    label: "No: " + (((location_data["mw2no"] / (location_data["mw2yes"] + location_data["mw2no"])).toFixed(2)) * 100) + "%"
-  }
+  $(".data-type").change(function() {
 
-];
-
-
-ctx19 = $("#mw2").get(0).getContext("2d");
-mw2chart = new Chart(ctx19).Pie(mw2data);
+    var val1 = $(".data-type option:selected").val();
+    // $('#'+val1).hide()
+    $('#'+val1).show()
+    $('#'+val1).siblings('canvas').hide()
+    // $('canvas').show(1, drawElements);
+    // $('canvas').hide();
+    // $('#'+val1).show(100);
+   // change()
+  })
 
 
+  $(".data-type11").change(function() {
 
-w2data = [
-  {
-    value: location_data["w2yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((location_data["w2yes"] / (location_data["w2yes"] + location_data["w2no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: location_data["w2no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D2",
-    label: "No: " + (((location_data["w2no"] / (location_data["w2yes"] + location_data["w2no"])).toFixed(2)) * 100) + "%"
-  }
-
-];
-
-
-ctx20 = $("#w2").get(0).getContext("2d");
-w2chart = new Chart(ctx20).Pie(w2data);
-
-
-
-var party_affiliation_data = <%= @party_affiliation_data.to_json %>
-
-
-dem2data = [
-  {
-    value: party_affiliation_data["dem2yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((party_affiliation_data["dem2yes"] / (party_affiliation_data["dem2yes"] + party_affiliation_data["dem2no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: party_affiliation_data["dem2no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D2",
-    label: "No: " + (((party_affiliation_data["dem2no"] / (party_affiliation_data["dem2yes"] + party_affiliation_data["dem2no"])).toFixed(2)) * 100) + "%"
-  }
-
-];
-
-
-ctx21 = $("#dem2").get(0).getContext("2d");
-dem2chart = new Chart(ctx21).Pie(dem2data);
-
-
-rep2data = [
-  {
-    value: party_affiliation_data["rep2yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((party_affiliation_data["rep2yes"] / (party_affiliation_data["rep2yes"] + party_affiliation_data["rep2no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: party_affiliation_data["rep2no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D2",
-    label: "No: " + (((party_affiliation_data["rep2no"] / (party_affiliation_data["rep2yes"] + party_affiliation_data["rep2no"])).toFixed(2)) * 100) + "%"
-  }
-
-];
-
-
-ctx22 = $("#rep2").get(0).getContext("2d");
-rep2chart = new Chart(ctx22).Pie(rep2data);
-
-
-ind2data = [
-  {
-    value: party_affiliation_data["ind2yes"],
-    color:"#F7464A",
-    highlight: "#FF5A5E",
-    label: "Yes: " + (((party_affiliation_data["ind2yes"] / (party_affiliation_data["ind2yes"] + party_affiliation_data["ind2no"])).toFixed(2)) * 100) + "%"
-  },
-  {
-    value: party_affiliation_data["ind2no"],
-    color: "#46BFBD",
-    highlight: "#5AD3D2",
-    label: "No: " + (((party_affiliation_data["ind2no"] / (party_affiliation_data["ind2yes"] + party_affiliation_data["ind2no"])).toFixed(2)) * 100) + "%"
-  }
-
-];
-
-
-ctx23 = $("#ind2").get(0).getContext("2d");
-ind2chart = new Chart(ctx23).Pie(ind2data);
-
+    var val11 = $(".data-type11 option:selected").val();
+    // $('#'+val1).hide()
+    $('#'+val11).show()
+    $('#'+val11).siblings('canvas').hide()
+    // $('canvas').show(1, drawElements);
+    // $('canvas').hide();
+    // $('#'+val1).show(100);
+   // change()
+  })
 
 });
+
+
 
 </script>
 
 
 
-<h3>Results By Gender</h3>
-<canvas id="male2" width="256" height="256"></canvas>
-<canvas id="female2" width="256" height="256"></canvas>
-<div></div>
-<h3>Results By Age</h3>
-<canvas id="young2" width="256" height="256"></canvas>
-<canvas id="middle2" width="256" height="256"></canvas>
-<canvas id="old2" width="256" height="256"></canvas>
-<div></div>
-<h3>Results By Location</h3>
-<canvas id="ne2" width="256" height="256"></canvas>
-<canvas id="s2" width="256" height="256"></canvas>
-<canvas id="mw2" width="256" height="256"></canvas>
-<canvas id="w2" width="256" height="256"></canvas>
-<div></div>
-<h3>Results By Party Affiliation</h3>
-<canvas id="dem2" width="256" height="256"></canvas>
-<canvas id="rep2" width="256" height="256"></canvas>
-<canvas id="ind2" width="256" height="256"></canvas>
+<!-- <h3>Results By Gender</h3> -->
 
+<div class="results-title row">
+  <div class="col-md-12">
+    <h1>Do you think the US should accept Syrian refugees?</h1>
+
+    <div class="legend1">
+      <div class="row legend-info1">
+        <div class="col-md-3">
+          <p class="yes-legend1">YES</p>
+        </div>
+        <div class="col-md-3">
+          <div class="yes-box1"></div>
+        </div>
+        <div class="col-md-3">
+          <p class="no-legend1">NO</p>
+        </div>
+        <div class="col-md-3">
+          <div class="no-box1"></div>
+        </div>
+      </div>
+    </div>
+    <div class="back-link-div">
+      <a class="back-link" href="/resultsmain">Back to all results</a>
+    </div>
+  </div>
+</div>
+
+  <!-- <form> -->
+  <div class="row">
+    <div class="col-md-6 chart1">
+      <div class="chart_left">
+        <select class="data-type" name="data_type">
+          <option disabled>User Type</option>
+          <option disabled>Gender</option>
+          <option selected value="male2">Male</option>
+          <option value="female2">Female</option>
+          <option disabled>Age</option>
+          <option value="young2">28-35</option>
+          <option value="middle2">36-54</option>
+          <option value="old2">55+</option>
+          <option disabled>Location</option>
+          <option value="ne2">Northeast</option>
+          <option value="s2">South</option>
+          <option value="mw2">Midwest</option>
+          <option value="w2">West</option>
+          <option disabled>Party Affiliation</option>
+          <option value="dem2">Democrat</option>
+          <option value="rep2">Republican</option>
+          <option value="ind2">Independent</option>
+        </select>
+        <!-- <div class="submit">
+        <input type="submit" value="Submit">
+      </div> -->
+      </div>
+    <!-- </form> -->
+    <div class="pie1">
+      <canvas id="male2" width="500" height="500"></canvas>
+      <canvas id="female2" width="500" height="500"></canvas>
+      <!-- <div></div>
+      <h3>Results By Age</h3> -->
+      <canvas id="young2" width="500" height="500"></canvas>
+      <canvas id="middle2" width="500" height="500"></canvas>
+      <canvas id="old2" width="500" height="500"></canvas>
+      <!-- <div></div>
+      <h3>Results By Location</h3> -->
+      <canvas id="ne2" width="500" height="500"></canvas>
+      <canvas id="s2" width="500" height="500"></canvas>
+      <canvas id="mw2" width="500" height="500"></canvas>
+      <canvas id="w2" width="500" height="500"></canvas>
+      <!-- <div></div>
+      <h3>Results By Party Affiliation</h3> -->
+      <canvas id="dem2" width="500" height="500"></canvas>
+      <canvas id="rep2" width="500" height="500"></canvas>
+      <canvas id="ind2" width="500" height="500"></canvas>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="col-md-6 chart2">
+    <div class="chart_right">
+      <select class="data-type11" name="data_type11">
+        <option disabled>Gender</option>
+        <option value="male22">Male</option>
+        <option selected value="female22">Female</option>
+        <option disabled>Age</option>
+        <option value="young22">18-35</option>
+        <option value="middle22">36-54</option>
+        <option value="old22">55+</option>
+        <option disabled>Location</option>
+        <option value="ne22">Northeast</option>
+        <option value="s22">South</option>
+        <option value="mw22">Midwest</option>
+        <option value="w22">West</option>
+        <option disabled>Party Affiliation</option>
+        <option value="dem22">Democrat</option>
+        <option value="rep22">Republican</option>
+        <option value="ind22">Independent</option>
+      </select>
+      <!-- <div class="submit">
+      <input type="submit" value="Submit">
+    </div> -->
+    </div>
+  <!-- </form> -->
+
+    <div class="pie2">
+      <canvas id="male22" width="500" height="500"></canvas>
+      <canvas id="female22" width="500" height="500"></canvas>
+      <!-- <div></div>
+      <h3>Results By Age</h3> -->
+      <canvas id="young22" width="500" height="500"></canvas>
+      <canvas id="middle22" width="500" height="500"></canvas>
+      <canvas id="old22" width="500" height="500"></canvas>
+      <!-- <div></div>
+      <h3>Results By Location</h3> -->
+      <canvas id="ne22" width="500" height="500"></canvas>
+      <canvas id="s22" width="500" height="500"></canvas>
+      <canvas id="mw22" width="500" height="500"></canvas>
+      <canvas id="w22" width="500" height="500"></canvas>
+      <!-- <div></div>
+      <h3>Results By Party Affiliation</h3> -->
+      <canvas id="dem22" width="500" height="500"></canvas>
+      <canvas id="rep22" width="500" height="500"></canvas>
+      <canvas id="ind22" width="500" height="500"></canvas>
+    </div>
+  </div>
+</div>
 
 
 
