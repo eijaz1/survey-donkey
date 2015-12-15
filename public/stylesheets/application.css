@@ -11,7 +11,7 @@ a {
 
 .title {
   height: 130px;
-  margin-top: -20px;
+  /*margin-top: -20px;*/
 }
 
 .main-survey {
@@ -26,7 +26,7 @@ a {
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 20%;
+  border-radius: 15%;
   background-color: #E8B33C;
   font-size: 20px;
   /*height: 442.719px;*/
@@ -40,8 +40,8 @@ a {
 
 .main-select {
   width: 90%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 8.5%;
+  margin-bottom: 8.5%;
   margin-left: 5%;
 }
 
@@ -55,7 +55,7 @@ a {
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 20%;
+  border-radius: 15%;
   background-color: #E8B33C;
   width: 40%;
 }
@@ -79,12 +79,12 @@ a {
 .survey-title {
   text-align: center;
   font-size: 50px;
-  margin-top: 70px;
+  /*margin-top: 70px;*/
   color: #E8B33C;
 }
 
 .long-question {
-  float: left;
+  /*float: left;*/
 }
 
 .yes {
@@ -111,12 +111,24 @@ a {
 #female1 {
 }
 
-.chart-left {
-  float: left;
+.chart1 {
+  /*margin-left: 15%;*/
+  text-align: center;
+  margin-top: 3%;
 }
 
-.chart-right {
-  float: right;
+.chart2 {
+  /*margin-left: 15%;*/
+  text-align: center;
+  margin-top: 3%;
+}
+
+.pie1 {
+  margin-top: 10%;
+}
+
+.pie2 {
+  margin-top: 10%;
 }
 
 .result-link {
@@ -130,28 +142,95 @@ a {
 
 .results-title {
   text-align: center;
+  /*margin-top: 1%;*/
 }
 
 .main-results-charts {
-  margin-left: 15%;
+  /*margin-left: 7%;*/
+  margin-top: 3%; 
 }
 
 .result-chart {
   margin: auto;
 }
 
+.col6-resultsmain {
+  text-align: center;
+}
+
+.col-md-5 {
+  text-align: center;
+}
+
+.q-row2 {
+  margin-top: 2%;
+}
+
+
+.legend {
+  height: 250px;
+  width: 150px;
+  background-color: #E8B33C;
+  margin: 0 auto;
+  border-radius: 20%;
+}
+
+.yes-legend {
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  border-radius: 20%;
+}
+
+.no-legend {
+  height: 30px;
+  width: 30px;
+  background-color: yellow;
+  border-radius: 20%;
+}
+
+.legend-title {
+  text-align: center;
+}
 
 
 
+.legend1 {
+  height: 60px;
+  width: 350px;
+  background-color: #E8B33C;
+  margin: 0 auto;
+  border-radius: 20%;
+  /*text-align: center;*/
+}
 
+.col-md-3 {
+  margin-top: 5%;
+}
 
+.yes-legend1 {
+  text-align: center;
+  margin-left: 30%;
+}
 
+.no-legend1 {
+  text-align: center;
+  margin-left: 30%;
+}
 
+.yes-box1 {
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  border-radius: 20%;
+}
 
-
-
-
-
+.no-box1 {
+  height: 30px;
+  width: 30px;
+  background-color: yellow;
+  border-radius: 20%;
+}
 
 
 

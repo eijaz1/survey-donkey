@@ -2,44 +2,16 @@ require_relative 'helpers/get_results'
 
 
 # Homepage (Root path)
+
+
+
+
 get '/' do
+  @user = User.new
   erb :index
 end
 
-# helpers do
-#   def current_user
-#     if session[:id] and
-#      @user = User.find(session[:id])
-#      @user
-#     end
-#   end
-# end
-
-
-get "/" do
-   # if @user = current_user
-   #   redirect "/main"
-   # else
-     erb :index
-   # end
-end
-
-post "/" do
-   # if @user = User.find_by_email(params[:email]) and @user.authenticate(params[:password])
-   #   session[:id] = @user.id
-   #   redirect "/main"
-   # else
-   #   @error = "Wrong email/password"
-     erb :index
-   # end
-end
-
-get '/main' do
-  @user = User.new
-  erb :'main'
-end
-
-post '/main' do
+post '/' do
   @user = User.new(params[:user])
     # gender: params[:gender],
     # age: params[:age],
@@ -70,15 +42,15 @@ post '/main' do
   # @user.answer6 = params[:user][:answer6]
   # @user.answer7 = params[:user][:answer7]
   if @user.save
-    redirect "/results"
+    redirect "/resultsmain"
   else
-    erb :main
+    erb :index
   end
     
 end
 
-get '/results' do
-  @user = User.new
+get '/results1' do
+  # @user = User.new
 
   # answer 1 male yes
   @male1yes = User.where("gender = 'male' and answer1 = 'yes'").count
@@ -430,14 +402,14 @@ get '/results' do
     ind4no: @ind4no,
   }
 
-    erb :results
+    erb :results1
 
 end
 
 
 
 get "/results2" do
-  @user = current_user
+  # @user = current_user
 
   # answer 1 male yes
   @male1yes = User.where("gender = 'male' and answer1 = 'yes'").count
@@ -813,7 +785,7 @@ end
 
 
 get "/results3" do
-  @user = current_user
+  # @user = current_user
 
   # answer 1 male yes
   @male1yes = User.where("gender = 'male' and answer1 = 'yes'").count
@@ -1169,7 +1141,7 @@ end
 
 
 get "/results4" do
-  @user = current_user
+  # @user = current_user
 
   # answer 1 male yes
   @male1yes = User.where("gender = 'male' and answer1 = 'yes'").count
