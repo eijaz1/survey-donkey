@@ -10,14 +10,14 @@
   <div class="user-info">
     <div class="user-form">
       <div>
-        <select class="main-select" name="user[gender]">
+        <select class="main-select form-control" name="user[gender]">
           <option selected disabled>Gender</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>
       </div>
       <div>
-        <select class="main-select" name="user[age]">
+        <select class="main-select form-control" name="user[age]">
           <option selected disabled>Age</option>
           <option value="young">18-35</option>
           <option value="middle">36-54</option>
@@ -25,7 +25,7 @@
         </select>
       </div>
       <div>
-        <select class="main-select" name="user[location]">
+        <select class="main-select form-control" name="user[location]">
           <option selected disabled>Location</option>
           <option value="northeast">Northeast</option>
           <option value="south">South</option>
@@ -56,7 +56,7 @@
         </select>
       </div> -->
       <div>
-        <select class="main-select" name="user[party_affiliation]">
+        <select class="main-select form-control" name="user[party_affiliation]">
           <option selected disabled>Party Affiliation</option>
           <option value="democrat">Democrat</option>
           <option value="republican">Republican</option>
@@ -69,48 +69,84 @@
 
     <div class="question-info">
       <div class="form-group">
-        <a href="/results1"><label>Do you support increased gun control?</label></a>
+        <a href="/results1">Do you support increased gun control?</a>
         <br>
-        <span class="yes">
-          <input type="radio" name="user[answer1]" value="yes">Yes
-        </span>
-          <input class="no" type="radio" name="user[answer1]" value="no">No
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default">
+            <span class="yes">
+              <input type="radio" name="user[answer1]" value="yes"> Yes
+            </span>
+          </label>
+          <label class="btn btn-default">
+            <input class="no" type="radio" name="user[answer1]" value="no"> No
+          </label>
+        </div>
+      </div>
+
+
+<!--           <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default">
+              <input type="radio" id="q156" name="quality[25]" value="yes" /> Yes
+          </label> 
+          <label class="btn btn-default">
+              <input type="radio" id="q157" name="quality[25]" value="no" /> No
+          </label> 
+      </div> -->
+     <!--  </div> -->
+
+      <div class="form-group">
+        <a href="/results2">Do you think the US should accept Syrian refugees?</a>
+        <br>
+
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default">
+            <span class="yes">
+              <input type="radio" name="user[answer2]" value="yes"> Yes
+            </span>
+          </label>
+          <label class="btn btn-default">
+            <input type="radio" name="user[answer2]" value="no"> No
+          </label>
+        </div>
       </div>
 
       <div class="form-group">
-        <a href="/results2"><label>Do you think the US should accept Syrian refugees?</label></a>
+        <a href="/results3">Do you support increasing the minimum wage to $15?</a>
         <br>
-        <span class="yes">
-          <input type="radio" name="user[answer2]" value="yes">Yes
-        </span>
-        <input type="radio" name="user[answer2]" value="no">No
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default">
+            <span class="yes">
+              <input type="radio" name="user[answer3]" value="yes"> Yes
+            </span>
+          </label>
+          <label class="btn btn-default">
+            <input type="radio" name="user[answer3]" value="no"> No
+          </label>
+        </div>
+
       </div>
 
       <div class="form-group">
-        <a href="/results3"><label>Do you support increasing the minimum wage to $15?</label></a>
+        <a href="/results4">Do you believe the Federal Government should fund <br><span class="long-question">Planned Parenthood?</span></a>
         <br>
-        <span class="yes">
-          <input type="radio" name="user[answer3]" value="yes">Yes
-        </span>
-        <input type="radio" name="user[answer3]" value="no">No
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default">
+            <span class="yes">
+              <input type="radio" name="user[answer4]" value="yes"> Yes
+            </span>
+          </label>
+          <label class="btn btn-default">
+            <input type="radio" name="user[answer4]" value="no"> No
+          </label>
+        </div>
       </div>
-
-      <div class="form-group">
-        <a href="/results4"><label>Do you believe the Federal Government should fund <br><span class="long-question">Planned Parenthood?</span></label></a>
-        <br>
-        <span class="yes">
-          <input type="radio" name="user[answer4]" value="yes">Yes
-        </span>
-        <input type="radio" name="user[answer4]" value="no">No
       </div>
-
-
-    </div>
     
     <div>
       <input class="submit" type="submit" value="Submit">
     </div>
     </form>
   </div>
+
 
 </body>

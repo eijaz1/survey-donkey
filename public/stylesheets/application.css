@@ -1,12 +1,24 @@
 body {
-  background-color: #806DE8;
+  /*background-color: #806DE8;*/
+  /*background-color: #3498db;*/
+  background-color: #A1E6FF;
   font-size: 18px;
 }
 
+/*.btn:hover {
+  background-color: blue;
+  color: blue;
+}*/
 
 
 a {
-  color: #806DE8;
+  color: #37537F;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #1B2A40;
+  text-decoration: none;
 }
 
 .title {
@@ -14,20 +26,21 @@ a {
   /*margin-top: -20px;*/
 }
 
-.main-survey {
-  
+.survey-results-title {
+  color: #37537F;
 }
 
 .user-info {
   float: left;
   margin-left: 5%;
-  border: 3px solid #E8B33C;
+  /*border: 3px solid #E8B33C;*/
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 5%;
-  background-color: #E8B33C;
+  /*background-color: #E8B33C;*/
+  background-color: #A1E6FF;
   font-size: 20px;
   /*height: 442.719px;*/
   /*width: 512.953px;*/
@@ -42,8 +55,8 @@ a {
 
 .main-select {
   width: 90%;
-  margin-top: 8.5%;
-  margin-bottom: 8.5%;
+  margin-top: 11.9%;
+  margin-bottom: 11.9%;
   margin-left: 5%;
 }
 
@@ -52,19 +65,21 @@ a {
   float: right;
   margin-right: 5%;
   text-align: center;
-  border: 3px solid #E8B33C;
+  /*border: 3px solid #E8B33C;*/
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 5%;
-  background-color: #E8B33C;
+  /*background-color: #E8B33C;*/
+  background-color: #A1E6FF;
   width: 40%;
 }
 
 .form-group {
   margin-top: 7.5%;
   margin-bottom: 7.5%;
+  color: #fff;
 }
 
 /*.survey {
@@ -82,7 +97,7 @@ a {
   text-align: center;
   font-size: 50px;
   /*margin-top: 70px;*/
-  color: #E8B33C;
+  color: #37537F;
 }
 
 .long-question {
@@ -103,11 +118,13 @@ a {
   width: 85%;
   border-radius: 5%;
   font-size: 30px;
-  box-shadow: 20px;
+  /*box-shadow: 20px;*/
   margin-left: 7.5%;
   margin-right: 7.5%;
   margin-top: 3%;
   /*margin-top: 300px;*/
+  background-color: #37537F;
+  color: #fff;
 }
 
 #female1 {
@@ -134,7 +151,7 @@ a {
 }
 
 .result-link {
-  color: #E8B33C;
+  color: #37537F;
   text-align: center;
 }
 
@@ -145,6 +162,7 @@ a {
 .results-title {
   text-align: center;
   /*margin-top: 1%;*/
+  color: #37537F;
 }
 
 .main-results-charts {
@@ -200,7 +218,7 @@ a {
 .legend1 {
   height: 60px;
   width: 350px;
-  background-color: #E8B33C;
+  /*background-color: #E8B33C;*/
   margin: 0 auto;
   border-radius: 20%;
   /*text-align: center;*/
@@ -212,30 +230,30 @@ a {
 
 .yes-legend1 {
   text-align: center;
-  margin-left: 30%;
+  margin-left: 60%;
 }
 
 .no-legend1 {
   text-align: center;
-  margin-left: 30%;
+  margin-left: 70%;
 }
 
 .yes-box1 {
   height: 30px;
   width: 30px;
-  background-color: red;
+  background-color: #37537F;
   border-radius: 20%;
 }
 
 .no-box1 {
   height: 30px;
   width: 30px;
-  background-color: yellow;
+  background-color: #FFF3F4;
   border-radius: 20%;
 }
 
 .back-link {
-  color: black;
+  color: #37537F;
   text-align: center;
 }
 
@@ -247,13 +265,16 @@ a {
   margin-top: 1%;
   margin-left: 43%;
   margin-right: 43%;
-  border: 3px solid #E8B33C;
+  border: 2px solid #37537F;
   border-radius: 20%;
-  background-color: #E8B33C;
+  background-color: #FFF3F4;
 }
 
 
-
+.form-control-results {
+  width: 50%;
+  margin: auto;
+}
 
 
 

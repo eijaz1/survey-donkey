@@ -13,14 +13,15 @@ $(document).ready(function() {
     total1data = [
       {
           value: total_data["yes1"],
-          color:"#F7464A",
-          highlight: "#FF5A5E",
+          color:"#37537F",
+          highlight: "#6396E5",
+          // "#3BBF60",
           label: "Yes: " + (((total_data["yes1"] / (total_data["yes1"] + total_data["no1"])) * 100).toFixed()) + "%"
       },
       {
           value: total_data["no1"],
-          color: "#46BFBD",
-          highlight: "#5AD3D1",
+          color: "#FFF3F4",
+          highlight: "#BFB6B7",
           label: "No: " + (((total_data["no1"] / (total_data["yes1"] + total_data["no1"])) * 100).toFixed()) + "%"
       },
 
@@ -34,14 +35,14 @@ $(document).ready(function() {
 total2data = [
       {
           value: total_data["yes2"],
-          color:"#F7464A",
-          highlight: "#FF5A5E",
+          color:"#37537F",
+          highlight: "#6396E5",
           label: "Yes: " + (((total_data["yes2"] / (total_data["yes2"] + total_data["no2"])) * 100).toFixed()) + "%"
       },
       {
           value: total_data["no2"],
-          color: "#46BFBD",
-          highlight: "#5AD3D1",
+          color: "#FFF3F4",
+          highlight: "#BFB6B7",
           label: "No: " + (((total_data["no2"] / (total_data["yes2"] + total_data["no2"])) * 100).toFixed()) + "%"
       },
 
@@ -55,14 +56,14 @@ total2data = [
    total3data = [
       {
           value: total_data["yes3"],
-          color:"#F7464A",
-          highlight: "#FF5A5E",
+          color:"#37537F",
+          highlight: "#6396E5",
           label: "Yes: " + (((total_data["yes3"] / (total_data["yes3"] + total_data["no3"])) * 100).toFixed()) + "%"
       },
       {
           value: total_data["no3"],
-          color: "#46BFBD",
-          highlight: "#5AD3D1",
+          color: "#FFF3F4",
+          highlight: "#BFB6B7",
           label: "No: " + (((total_data["no3"] / (total_data["yes3"] + total_data["no3"])) * 100).toFixed()) + "%"
       },
 
@@ -76,14 +77,14 @@ total2data = [
    total4data = [
       {
           value: total_data["yes4"],
-          color:"#F7464A",
-          highlight: "#FF5A5E",
+          color:"#37537F",
+          highlight: "#6396E5",
           label: "Yes: " + (((total_data["yes4"] / (total_data["yes4"] + total_data["no4"])) * 100).toFixed()) + "%"
       },
       {
           value: total_data["no4"],
-          color: "#46BFBD",
-          highlight: "#5AD3D1",
+          color: "#FFF3F4",
+          highlight: "#BFB6B7",
           label: "No: " + (((total_data["no4"] / (total_data["yes4"] + total_data["no4"])) * 100).toFixed()) + "%"
       },
 
@@ -97,9 +98,17 @@ total2data = [
 
 </script>
 
+<!-- <div class="row">
+  <div class="col-md-12 nav nav-bar">
+  <div class="back-link-div">
+      <a class="back-link" href="/resultsmain">Back to all results</a>
+    </div>
+  </div>
+</div> -->
+
 <div class="results-title row">
   <div class="col-md-12">
-    <h1>Survey Results</h1>
+    <h1 class="survey-results-title">Survey Results</h1>
 
     <div class="legend1">
       <div class="row legend-info1">
